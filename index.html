@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      @media all and (max-width: 1000px) and (min-width: 0px) {
+        body {
+          margin-left: 12rem;
+          margin-right: 12rem;
+        }
+      }
+    
+      @media all and (max-width: 1599px) and (min-width: 1001px) {
+        body {
+          margin-left: 22rem;
+          margin-right: 22rem;
+        }
+      }
+    
+      @media all and (min-width: 1600px) {
+        body {
+          margin-left: 32rem;
+          margin-right: 32rem;
+        }
+      }
+
+      a {
+        color: #78CDD7;
+        font-size: 26px;
+      }
+    
+      p {
+        margin-left: 2rem;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        font-size: 26px;
+      }
+
+      ul {
+        margin-top: 0;
+      }
+    
+      .header {
+        display: flex;
+      }
+    
+      .profile-links {
+        text-align: right;
+        margin-left: auto
+      }
+    
+      .professional-experience-header {
+        background-color: #ff9f9f;
+        font-size: 26px;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      .resume-header {
+        background-color: #abffae;
+        font-size: 26px;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    
+      .content-header {
+        font-size: 24px;
+      }
+    
+      .name {
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-right: 0;
+        margin-left: 1rem;
+        padding-top: 60px;
+    
+        font-weight: bolder;
+        color: #78CDD7;
+        text-shadow: 2px 1px #0D5C63;
+      }
+
+      .table-title {
+        display: block;
+        text-align: right;
+      }
+    
+      a:hover, .name:hover{
+        color: #78CDD7;
+        background-clip: text;
+        animation: hue 0.5s infinite linear;
+      }
+    
+      ::selection {
+        background: #b3ff00; /* WebKit/Blink Browsers */
+      }
+      ::-moz-selection {
+        background: #b3ff00; /* Gecko Browsers */
+      }
+    
+      @keyframes hue {
+        from {
+          -webkit-filter: hue-rotate(0deg);
+        }
+        
+        to {
+          -webkit-filter: hue-rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <img class="profile-pic" src="./public/img/1675456668444.jpg" width="100px" />
+      <h1 class="name">Zachary Walters</h1>
+      <div class="profile-links">
+        <a href="https://github.com/zachary-walters">github</a>
+        <br/>
+        <a href="https://www.linkedin.com/in/zachary-walters/?_l=en_US">linkedin</a>
+      </div>
+    </div>
+    <hr/>
+    <div class="content">
+      <span class="professional-experience-header">professional experience:</span>
+      <div id="content-professional-experience">
+        <p class="title">
+          <b>Pearson Education</b> - Senior Software Engineer - 2021-10-01 > current
+        </p>
+        <p class="paragraph">
+          I maintained Pearson's core <a class="paragraph-links" href="https://mzdevinc.com/adam/">Assessment Delivery and Management platform (ADAM)</a>. 
+          The tools used are Go, Vue.js, Postgres, AWS, and a proprietary MySQL columnar storage solution called <a href="https://www.singlestore.com/">SingleStore</a>. 
+          These tools, with the help and support of experienced product managers and product teams, allowed me to create and maintain dynamic, scalable, high speed reporting software for clients, 
+          data pipelines, rostering integration services, and role permissioning services.
+        </p>
+        <br/>
+        <p class="title">
+          <b>New Constructs, LLC</b> - Software Engineer - 2017-06-01 > 2021-10-01
+        </p>
+        <p class="paragraph">
+          I maintained New Constructs's <a href="https://www.newconstructs.com/education/models/">financial models</a>. These models were written in 
+          Java, and were the primary product from New Constructs. I worked alongside <a href="https://www.cfainstitute.org/en/about">CFA Level 3 Financial Analysts</a> 
+          to build financial models used by retail and instutional investers, including but not limited to: Earnst and Young, Morgan Stanley, TD Ameritrade, and <a href="https://www.newconstructs.com/best-fundamental-data-in-the-world/">Harvard Business School</a>.
+          Other responsibilities included maintaining nightly cronjobs written in Python, administering AWS tools such as EC2, RDS, and Elastic Beanstalk, managing bare-metal in office servers
+          running RHEL/CentOS, and contributing and maintaining the client facing webapp.
+        </p>
+      </div>
+      <br>
+      <span class="resume-header">resume:</span>
+      <div id="content-resume">
+        <p>
+          <a class="download-button" href="./public/img/zwalters.resume.pdf" download="zwalters.resume.pdf">Download</a>
+        </p>
+        <table>
+          <tbody>
+            <tr>
+              <td class="table-title">
+                Pearson Education
+              </td>
+              <td>
+                <ul>
+                  <li>Full stack web app development using Go, Vue, Postgres, AWS Infrastructure</li>
+                  <li>Maintaining and engineering new features in modern academic assessment platforms</li>
+                  <li>Extending and integrating reporting capabilities in academic assessment platforms</li>
+                  <li>Creating custom rostering services</li>
+                  <li>Building and maintaining internal company tools</li>
+                  <li>Creating and maintaining AWS Serverless Lambda modules</li>
+                  <li>Engineering concurrent services with Goroutines</li>
+                  <li>Integrating startup AWS Infrastructure into enterprise AWS Infrastructure</li>
+                  <li>Engineering columnar storage solutions with Memsql/Singlestore for fast data access</li>
+                  <li>Building and maintaining custom data pipelines</li>
+                </ul> 
+              </td>
+            </tr>
+            <tr>
+              <td class="table-title">
+                New Constructs LLC
+              </td>
+              <td>
+                <ul>
+                  <li>Lead Engineer on our Financial Models team.</li>
+                  <li>Full stack web app development using Java, Javascript, Postgres, AWS Infrastructure</li>
+                  <li>Building data aggregation and analytics software using Python and machine learning technologies</li>
+                  <li>Manage data access, generation, and storage</li>
+                  <li>Contributed to internal system development and operation, including our proprietary internal desktop application, machine-learning parsing application, automated modeling tools, and client facing web application</li>
+                  <li>Contributed to the development and maintenance of an automated, scalable, and securesystem architecture</li>
+                  <li>Working with financial analysts to build tools for smarter investing</li>
+                </ul> 
+              </td>
+            </tr>
+            <tr>
+              <td class="table-title">
+                Education
+              </td>
+              <td>
+                <ul>
+                  <li>Bachelors of Science (B.S.), Computer Science</li>
+                  <li>Minor in Mathematics</li>
+                  <li>Middle Tennessee State University</li>
+                  <li>Spring 2014</li>
+                </ul> 
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+   
+  </body>
+</html>
