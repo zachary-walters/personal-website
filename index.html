@@ -1,22 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Zachary Walters</title>
     <style>
-      @media all and (max-width: 1000px) and (min-width: 0px) {
+      @media all and (max-width: 600px) {
         body {
-          margin-left: 12rem;
-          margin-right: 12rem;
+          margin-left: 1.5rem;
+          margin-right: 1.5rem;
         }
       }
-    
+
+      @media all and (min-width: 601px) and (max-width: 1000px) {
+        body {
+          margin-left: 6rem;
+          margin-right: 6rem;
+        }
+      }
+
       @media all and (max-width: 1599px) and (min-width: 1001px) {
         body {
           margin-left: 22rem;
           margin-right: 22rem;
         }
       }
-    
+
       @media all and (min-width: 1600px) {
         body {
           margin-left: 32rem;
@@ -32,7 +41,7 @@
       body {
         font-family: "Times New Roman", Times, serif;
       }
-    
+
       p {
         margin-left: 2rem;
         margin-top: 2px;
@@ -47,14 +56,14 @@
       ul {
         margin-top: 0;
       }
-    
+
       .header {
         display: flex;
       }
-    
+
       .profile-links {
         text-align: right;
-        margin-left: auto
+        margin-left: auto;
       }
 
       .about-header {
@@ -63,7 +72,7 @@
         margin-top: 0;
         margin-bottom: 0;
       }
-    
+
       .professional-experience-header {
         background-color: #d5d3ff;
         font-size: 26px;
@@ -77,45 +86,50 @@
         margin-top: 0;
         margin-bottom: 0;
       }
-    
+
       .content-header {
         font-size: 24px;
       }
-    
+
       .name {
         margin-top: 0;
         margin-bottom: 0;
         margin-right: 0;
         padding-top: 60px;
-    
+
         font-weight: bolder;
         color: #78CDD7;
         text-shadow: 2px 1px #0D5C63;
+      }
+
+      .title {
+        margin-top: 1.5rem;
+        margin-bottom: 0;
       }
 
       .table-title {
         display: block;
         text-align: right;
       }
-    
-      a:hover, .name:hover{
+
+      a:hover, .name:hover {
         color: #78CDD7;
         background-clip: text;
         animation: hue 0.5s infinite linear;
       }
-    
+
       ::selection {
         background: #b3ff00; /* WebKit/Blink Browsers */
       }
       ::-moz-selection {
         background: #b3ff00; /* Gecko Browsers */
       }
-    
+
       @keyframes hue {
         from {
           -webkit-filter: hue-rotate(0deg);
         }
-        
+
         to {
           -webkit-filter: hue-rotate(360deg);
         }
@@ -136,54 +150,82 @@
     <hr/>
     <div class="content">
       <span class="about-header">who:</span>
-      <p>Experienced and results-driven Software Engineer with over 9 years of hands-on experience designing, developing, and maintaining scalable backend systems and data-driven applications. Strong expertise in building distributed services, designing financial models, and optimizing data pipelines in both educational and financial domains. Skilled in Go, Java, and Python, with a proven ability to deliver high-performance APIs, data storage solutions, and ETL workflows that reduce costs and improve efficiency.</p>
+      <p>I'm a data engineer with 10+ years of hands-on experience designing, building, and maintaining scalable backend systems and data pipelines across the education and finance worlds. These days I'm at ClassLink, leading the rebuild of our analytics pipeline: an AWS architecture (Kinesis and Lambda) that turns roughly 2 billion clickstream events a month into clean, queryable data in Snowflake.</p>
+      <p>Lately I've been just as focused on <i>how</i> software gets built as on the software itself. I build custom agentic, AI-assisted development workflows that take a feature from spec all the way to a reviewed pull request, without cutting corners on testing, infrastructure, or code quality. I'm proficient in Go, Java, and Python, and I have a soft spot for systems that are observable, cheap to run, and safe to change.</p>
       <span class="professional-experience-header">work:</span>
       <div id="content-professional-experience">
+        <p class="title">
+          <b>ClassLink - Data Engineer</b>
+        </p>
+        <p class="paragraph">
+          At <a href="https://www.classlink.com" target="_blank">ClassLink</a>, I lead the rebuild of the analytics events pipeline that processes around 2 billion clickstream events per month, re-architecting it from a Firehose-based delivery design onto Kinesis Data Streams, Lambda, and S3 before it lands in Snowflake.
+          I own all of the AWS infrastructure as code with CDK, including the VPC, least-privilege IAM, reactive Kinesis auto-scaling, and multi-stage deploys across dev, staging, and production.
+          I also designed and built our OneRoster to Ed-Fi roster pipeline end to end: a multi-stage Step Functions flow with delta syncing and data-quality validation, tested against a live Ed-Fi ODS.
+        </p>
+        <p class="paragraph">
+          A big part of my work here is engineering the way we build. I created a custom AI-assisted development workflow on top of <a href="https://www.claude.com/product/claude-code" target="_blank">Claude Code</a> that drives a feature from spec to reviewed pull request, with automated code review plus static-analysis and security gates running on every commit. I also authored the team's engineering standards, the contract that keeps AI-generated code consistent with our conventions.
+        </p>
+        <br/>
         <p class="title">
           <b>Pearson Education - Software Engineer</b>
         </p>
         <p class="paragraph">
-          At Pearson, I serve as a Software Engineer on the <a class="paragraph-links" href="https://support.assessment.pearson.com/as">Assessment Delivery and Management platform (ADAM)</a>, where I design, build, and maintain critical backend infrastructure for large-scale academic assessment systems. 
-          My role includes engineering concurrent services and APIs using Go, optimizing ETL pipelines with AWS Glue and Redshift, and building columnar data storage solutions with SingleStore to support fast and reliable analytics and reporting.
-          I work closely with cross-functional teams - including product managers, developers, and data analysts - to deliver dynamic and scalable features such as student rostering, role-based access control, and assessment reporting for educational institutions.
+          At Pearson, I was a Software Engineer on the <a class="paragraph-links" href="https://support.assessment.pearson.com/as">Assessment Delivery and Management platform (ADAM)</a>, where I designed, built, and maintained critical backend infrastructure for large-scale academic assessment systems.
+          I engineered concurrent services and APIs using Go, optimized ETL pipelines with AWS Glue and Redshift for batch analytics, and built columnar storage with SingleStore for live analytics, supporting fast and reliable reporting.
+          I worked closely with cross-functional teams, including product managers, developers, and data analysts, to deliver dynamic and scalable features such as student rostering, role-based access control, and assessment reporting for educational institutions.
         </p>
         <br/>
         <p class="title">
           <b>New Constructs, LLC - Software Engineer</b>
         </p>
         <p class="paragraph">
-At <a href="https://www.newconstructs.com" target="_blank">New Constructs</a>, I worked as a Software Engineer responsible for maintaining and enhancing the company's core financial modeling platform, its flagship product, primarily built in Java. 
-I collaborated directly with <a href="https://www.cfainstitute.org/programs/cfa" target="_blank">CFA Level III</a> Financial Analysts to co-design and implement complex financial models used by both retail and institutional investors, including clients such as 
-<a href="https://www.ey.com" target="_blank">Ernst & Young</a>, 
-<a href="https://www.morganstanley.com" target="_blank">Morgan Stanley</a>, 
-<a href="https://www.tdameritrade.com" target="_blank">TD Ameritrade</a>, and 
+At <a href="https://www.newconstructs.com" target="_blank">New Constructs</a>, I worked as a Software Engineer responsible for maintaining and enhancing the company's core financial modeling platform, its flagship product, primarily built in Java.
+I collaborated directly with <a href="https://www.cfainstitute.org/programs/cfa" target="_blank">CFA Level III</a> Financial Analysts to co-design and implement complex financial models used by both retail and institutional investors, including clients such as
+<a href="https://www.ey.com" target="_blank">Ernst &amp; Young</a>,
+<a href="https://www.morganstanley.com" target="_blank">Morgan Stanley</a>,
+<a href="https://www.tdameritrade.com" target="_blank">TD Ameritrade</a>, and
 <a href="https://www.hbs.edu" target="_blank">Harvard Business School</a>.
         </p>
       </div>
-      <br>
+      <br/>
       <span class="resume-header">resume:</span>
       <div id="content-resume">
         <p>
-          <a class="download-button" href="./public/img/zwalters.resume.pdf" download="zwalters.resume.pdf">Download</a>
+          <a class="download-button" href="./public/img/zwalters.resume.pdf" download="zwalters.resume.pdf">Download (PDF)</a>
+          <a class="download-button" href="./public/img/zwalters.resume.docx" download="zwalters.resume.docx">Download (DOCX)</a>
         </p>
         <table>
           <tbody>
+            <tr>
+              <td class="table-title">
+                ClassLink
+              </td>
+              <td>
+                <ul>
+                  <li>Re-architected ClassLink's analytics events pipeline (~2B events/month) onto Kinesis Data Streams, Lambda, and S3, landing in Snowflake</li>
+                  <li>Owned all AWS infrastructure as code (CDK): VPC, least-privilege IAM, reactive Kinesis auto-scaling, and multi-stage deploys</li>
+                  <li>Built a cache-backed enrichment layer that augments events with roster and demographic data</li>
+                  <li>Designed and built a OneRoster to Ed-Fi roster pipeline on AWS Step Functions, with delta syncing and data-quality validation</li>
+                  <li>Built a custom AI-assisted development workflow on Claude Code, taking a feature from spec to reviewed PR with automated code review and static-analysis/security gates on every commit</li>
+                  <li>Authored the team's engineering standards and CI/CD tooling (GitHub Actions, LocalStack integration tests)</li>
+                  <li>Core Technologies: Python, AWS CDK, Kinesis, Lambda, Step Functions, DynamoDB, S3, ElastiCache (Valkey), PostgreSQL, Snowflake</li>
+                </ul>
+              </td>
+            </tr>
             <tr>
               <td class="table-title">
                 Pearson Education
               </td>
               <td>
                 <ul>
-                  <li>Maintaining and engineering new features in modern academic assessment platforms</li>
-                  <li>Extending and integrating reporting capabilities in academic assessment platforms</li>
-                  <li>Creating and maintaining rostering and services and integrations</li>
-                  <li>Engineering concurrent services and APIs with Go</li>
-                  <li>Optimizing and maintaining ETL processes, reducing data processing time and cost using Redshift and Glue</li>
-                  <li>Engineering columnar storage solutions for fast data analytics</li>
-                  <li>Working with Product Managers to deliver assessment features to clients</li>
-                  <li>Maintaining Jenkins pipelines</li>
-                  <li>Core Technologies: Go, Postgres, Redshift, Docker, Jenkins, Spark, SQS, Kenesis</li>
-                </ul> 
+                  <li>Built and maintained features for modern academic assessment platforms, including reporting and analytics capabilities</li>
+                  <li>Engineered concurrent services and APIs in Go, along with rostering integrations between assessment systems</li>
+                  <li>Optimized ETL pipelines on Redshift and AWS Glue for batch analytics, processing 50TB+ of assessment data while reducing processing time and cost</li>
+                  <li>Built columnar storage solutions with SingleStore for fast, live analytics</li>
+                  <li>Partnered with product managers to deliver assessment features to clients</li>
+                  <li>Maintained Jenkins CI pipelines</li>
+                  <li>Core Technologies: Go, PostgreSQL, Redshift, SingleStore, Spark, Docker, Jenkins, SQS, Kinesis</li>
+                </ul>
               </td>
             </tr>
             <tr>
@@ -192,14 +234,12 @@ I collaborated directly with <a href="https://www.cfainstitute.org/programs/cfa"
               </td>
               <td>
                 <ul>
-                  <li>Co-designed and implemented complex financial models</li>
-                  <li>Maintained a monolith web application written in Java</li>
-                  <li>Building data aggregation and analytics software</li>
-                  <li>Manage data access, generation, and storage</li>
-                  <li>Contributed to internal system development and operation</li>
-                  <li>Working with financial analysts to build tools for smarter investing</li>
-                  <li>Core Technologies: Java, Postgres, Python, Docker</li>
-                </ul> 
+                  <li>Co-designed and implemented complex financial models powering tools for smarter investing</li>
+                  <li>Built data aggregation and analytics software, managing data generation, access, and storage</li>
+                  <li>Maintained a Java monolith web application and contributed to internal systems development and operations</li>
+                  <li>Partnered with CFA-credentialed financial analysts to translate research into production tooling</li>
+                  <li>Core Technologies: Java, Python, PostgreSQL, Docker</li>
+                </ul>
               </td>
             </tr>
             <tr>
@@ -208,11 +248,14 @@ I collaborated directly with <a href="https://www.cfainstitute.org/programs/cfa"
               </td>
               <td>
                 <ul>
-                  <li>Bachelors of Science (B.S.), Computer Science</li>
-                  <li>Minor in Mathematics</li>
+                  <li>Master of Science (M.S.), Computer Science (focus in Machine Learning &amp; AI)</li>
+                  <li><a href="https://www.wgu.edu">Western Governors University</a></li>
+                  <li>2026</li>
+                  <li>&nbsp;</li>
+                  <li>Bachelor of Science (B.S.), Computer Science, Minor in Mathematics</li>
                   <li><a href="https://csc.mtsu.edu/">Middle Tennessee State University</a></li>
-                  <li>Spring 2014</li>
-                </ul> 
+                  <li>2014</li>
+                </ul>
               </td>
             </tr>
           </tbody>
